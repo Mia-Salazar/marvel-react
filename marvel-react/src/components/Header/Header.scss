@@ -1,0 +1,31 @@
+@import '../../../assets/stylesheet/variables.scss';
+
+.menu.ui.inverted.navbar {
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        padding: 0 16px;
+        color: $white;
+    }
+
+    .icon {
+        color: $primary;
+        margin-bottom: 4px;
+    }
+
+    .item {
+        font-family: $main-family;
+
+        &.active, &:hover {
+            background-color: $primary;
+        }
+    }
+
+    .logo-title {
+        margin-right: 8px;
+        margin-bottom: 0;
+        font-size: 20px;
+        font-family: $main-family;
+    }
+}
