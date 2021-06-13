@@ -1,10 +1,20 @@
-import './App.css';
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Header } from '../src/components/Header/Header';
+import './App.scss';
+import 'semantic-ui-css/semantic.min.css';
+
 
 const App = () => {
   return (
-    <h1>
-      Hello react
-    </h1>
+    <div>
+      <Header/>
+      <main className="main">
+        <BrowserRouter>
+          <Switch>
+          </Switch>
+        </BrowserRouter>
+      </main>
+    </div>
   )
 }
 
