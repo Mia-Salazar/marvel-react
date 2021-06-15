@@ -20,6 +20,16 @@ export const Home = () => {
 					href='https://cdn.pixabay.com/photo/2017/04/09/16/40/batman-2216148_960_720.jpg'
 					target='_blank'
 					centered
+					className="desktop"
+					/>
+					<Image
+					src='https://cdn.pixabay.com/photo/2017/04/09/16/40/batman-2216148_960_720.jpg'
+					as='a'
+					size='medium'
+					href='https://cdn.pixabay.com/photo/2017/04/09/16/40/batman-2216148_960_720.jpg'
+					target='_blank'
+					centered
+					className="mobile"
 					/>
 				</div>
 				<Accordion className="accordion">
