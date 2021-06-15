@@ -23,6 +23,7 @@ export const Header = () => {
 			</div>
 			{items.map((c) => (
 				<Menu.Item
+					href={c.key}
 					key={c.key}
 					name={c.key}
 					active={linkActive === c.key}

@@ -13,7 +13,8 @@ const App = () => {
       <main className="main">
         <BrowserRouter>
           <Switch>
-          <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
           </Switch>
         </BrowserRouter>
       </main>
