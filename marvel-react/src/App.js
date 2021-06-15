@@ -1,7 +1,9 @@
 import { Switch, Route, BrowserRouter } from "react-router-dom";
+import 'semantic-ui-css/semantic.min.css';
+
 import { Header } from '../src/components/Header/Header';
 import './App.scss';
-import 'semantic-ui-css/semantic.min.css';
+import {Home} from '../src/page/Home/Home';
 
 
 const App = () => {
@@ -11,6 +13,7 @@ const App = () => {
       <main className="main">
         <BrowserRouter>
           <Switch>
+          <Route exact path="/" component={Home} />
           </Switch>
         </BrowserRouter>
       </main>
