@@ -19,7 +19,7 @@ export const Header = () => {
 		<Menu inverted className="navbar">
 			<div className="logo">
 				<h1 className="logo-title">El coleccionista</h1>
-				<Icon name='book' />
+				<Icon name='book' className="desktop"/>
 			</div>
 			{items.map((c) => (
 				<Menu.Item
