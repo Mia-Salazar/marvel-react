@@ -33,7 +33,7 @@ export const Home = () => {
 					</Accordion.Title>
 					<Accordion.Content active={accordionActive === 0}>
 						<p>
-							Es un proyecto creado por Mia Salazar para practicar con Redux y realizada con SCSS y con el framework de CSS Semantic UI
+							Es un proyecto creado por Mia Salazar para practicar con React y realizada con SCSS y con el framework de CSS Semantic UI
 						</p>
 					</Accordion.Content>
 
