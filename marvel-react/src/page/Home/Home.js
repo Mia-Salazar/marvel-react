@@ -57,7 +57,7 @@ export const Home = () => {
 					</Accordion.Title>
 					<Accordion.Content active={accordionActive === 1}>
 						<p>
-							La información proviene de la API gratuita de Marvel, que se puede encontrar en este <a href="https://developer.marvel.com/" target="_blank">link</a>.
+							La información proviene de la API gratuita de Marvel, que se puede encontrar en este <a href="https://developer.marvel.com/" rel="noreferrer" target="_blank">link</a>.
 						</p>
 					</Accordion.Content>
 
@@ -71,7 +71,7 @@ export const Home = () => {
 					</Accordion.Title>
 					<Accordion.Content active={accordionActive === 2}>
 						<p>
-							Puedes contactar con Mia a través de su <a href="http://miasalazar.com" target="_blank">web</a>, en su <a href="https://twitter.com/chochomona" target="_blank">Twitter</a> o en su <a href="https://www.linkedin.com/in/miasalazar/" target="_blank">Linkedin</a>. También puedes escribirle un correo a <a href="maria.sgr@gmail.com">maria.sgr@gmail.com</a>
+							Puedes contactar con Mia a través de su <a href="http://miasalazar.com" rel="noreferrer" target="_blank">web</a>, en su <a href="https://twitter.com/chochomona" rel="noreferrer" target="_blank">Twitter</a> o en su <a href="https://www.linkedin.com/in/miasalazar/" rel="noreferrer" target="_blank">Linkedin</a>. También puedes escribirle un correo a <a href="maria.sgr@gmail.com">maria.sgr@gmail.com</a>
 						</p>
 					</Accordion.Content>
 					<Accordion.Title
