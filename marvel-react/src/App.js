@@ -2,11 +2,14 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css';
 
 import { Header } from '../src/components/Header/Header';
+import { Home } from '../src/page/Home/Home';
+import { getComicsAxios, getComics } from './services/comicService';
 import './App.scss';
-import {Home} from '../src/page/Home/Home';
 
 
 const App = () => {
+  getComics().then((json) => console.log(json))
+  //getComicsAxios().then((json) => console.log(json))
   return (
     <div>
       <Header/>
