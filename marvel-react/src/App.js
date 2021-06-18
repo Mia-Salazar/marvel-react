@@ -8,7 +8,6 @@ import './App.scss';
 
 
 const App = () => {
-  console.log('app')
   //getComics().then((json) => console.log(json))
   //getComicsAxios().then((json) => console.log(json))
   return (

@@ -11,9 +11,7 @@ const items = [
 ];
 
 export const Header = () => {
-	console.log('header')
 	const handleClick = (event, c) => {
-		console.log(c)
 		updateLink(c.name)
 	};
 	const [linkActive, updateLink] = useState('home');
