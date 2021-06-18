@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Dimmer, Loader, Card } from 'semantic-ui-react';
+import { Container, Dimmer, Loader, Card, Button, Icon } from 'semantic-ui-react';
 
 import { getComicsAxios } from '../../services/comicService';
 import { Comic } from '../../components/Comic/Comic';
@@ -8,21 +8,39 @@ import './Comics.scss';
 
 export const Comics = () => {
 	const [loading, setLoading] = useState(false);
-	const [comics, setComics] = useState([]);
-	let isEmpty = false;
+	const [isEmpty, setIsEmpty] = useState(false);
+	const [noLoadMore, updateNoLoadMore] = useState(false);
+	const [comics, updateComics] = useState([]);
+	const [allComics, setAllComics] = useState([]);
+
+	const loadMore = (event) => {
+		if (comics.length === allComics.length) {
+			updateNoLoadMore(true);
+		} else {
+			let addMoreComics = allComics.splice(comics.length, comics.length + 9);
+			updateComics(comics.concat(addMoreComics));
+		}
+	};
 
 	useEffect(() => {
 		setLoading(true);
 		getComicsAxios().then((json) => {
 			const comicsMarvel = json.comics.filter(comics => comics.publisher === 'MARVEL COMICS');
-			if (comics.length < 0) {
-				isEmpty = true;
+			if (comicsMarvel.length < 0) {
+				setIsEmpty(true);
+				updateNoLoadMore(true);
 			} else {
-				setComics(comicsMarvel)
+				setAllComics(comicsMarvel);
+				let comicsFirstPage = allComics.splice(0,9);
+				updateComics(comicsFirstPage);
 			}
 			setLoading(false);
-		})
-	}, [setComics]);
+		}).catch(exception => {
+			setLoading(false);
+			setIsEmpty(true);
+			updateNoLoadMore(true);
+	 });
+	}, [allComics]);
 
 	return (
 		<Container className="comics section">
@@ -40,7 +58,15 @@ export const Comics = () => {
 					})
 				}
 			</Card.Group>
-
+			{!noLoadMore
+			?
+			<div className="button-group">
+				<Button color='red' icon labelPosition='right' onClick={loadMore}>
+					Cargar más
+					<Icon name='right arrow' />
+				</Button>
+			</div>
+			: ''}
 		</Container>
 	)
 }

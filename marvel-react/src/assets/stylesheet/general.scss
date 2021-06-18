@@ -12,6 +12,8 @@ p, span, a, li {
 }
 
 .ui.container.section {
+    padding-bottom: 48px;
+    
     .title {
         margin: 32px auto 0 auto;
         font-family: $main-family;
