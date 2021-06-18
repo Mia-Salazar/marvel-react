@@ -1,5 +1,10 @@
 .ui.container.section.comics {
+    .cards {
+        justify-content: center;
+    }
+
     .title {
         margin-bottom: 48px;
+        text-align: center;
     }
 }

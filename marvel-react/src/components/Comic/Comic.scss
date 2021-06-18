@@ -1,0 +1,22 @@
+@import '../../assets/stylesheet/variables.scss';
+
+.ui.card.comic {
+    .price {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 32px;
+        color: $primary;
+    }
+
+    .content {
+        .header {
+            height: 68px;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+    }
+}
