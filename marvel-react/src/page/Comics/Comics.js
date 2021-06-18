@@ -33,10 +33,10 @@ export const Comics = () => {
 				</Dimmer>
 			}
 			<Card.Group>
-				{isEmpty
+				{isEmpty && !loading
 					? 'No hay comics nuevos de Marvel'
 					: comics.map((comic, index) => {
-						return <Comic key={index}></Comic>
+						return <Comic key={index} comic={comic}></Comic>
 					})
 				}
 			</Card.Group>
