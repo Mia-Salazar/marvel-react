@@ -9,8 +9,8 @@ export const Home = () => {
 	};
 	const [accordionActive, updateAccordion] = useState('home');
 	return (
-		<Container className="home">
-				<h1 className="home-title">El coleccionista</h1>
+		<Container className="home section">
+				<h1 className="title">El coleccionista</h1>
 				<h2 className="home-subtitle">de <span>comics</span></h2>
 				<div className="hero">
 					<Image

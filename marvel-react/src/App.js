@@ -3,12 +3,12 @@ import 'semantic-ui-css/semantic.min.css';
 
 import { Header } from '../src/components/Header/Header';
 import { Home } from '../src/page/Home/Home';
-import { getComicsAxios, getComics } from './services/comicService';
+import { Comics } from '../src/page/Comics/Comics';
 import './App.scss';
 
 
 const App = () => {
-  getComics().then((json) => console.log(json))
+  //getComics().then((json) => console.log(json))
   //getComicsAxios().then((json) => console.log(json))
   return (
     <div>
@@ -18,6 +18,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/comics" component={Comics} />
           </Switch>
         </BrowserRouter>
       </main>

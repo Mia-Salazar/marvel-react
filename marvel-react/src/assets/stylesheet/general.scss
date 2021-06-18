@@ -10,3 +10,10 @@ h1, h2, h3, h4, h5, h6 {
 p, span, a, li {
     font-family: $secondary-family;
 }
+
+.ui.container.section {
+    .title {
+        margin: 32px auto 0 auto;
+        font-family: $main-family;
+    }
+}
