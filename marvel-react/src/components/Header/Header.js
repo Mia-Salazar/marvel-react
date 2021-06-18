@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import { Menu, Icon } from 'semantic-ui-react';
 
 import './Header.scss';
@@ -23,7 +24,7 @@ export const Header = () => {
 			</div>
 			{items.map((c) => (
 				<Menu.Item
-					href={c.key}
+					as={Link} to={c.key}
 					key={c.key}
 					name={c.key}
 					active={linkActive === c.key}
