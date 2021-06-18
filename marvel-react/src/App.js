@@ -8,20 +8,21 @@ import './App.scss';
 
 
 const App = () => {
+  console.log('app')
   //getComics().then((json) => console.log(json))
   //getComicsAxios().then((json) => console.log(json))
   return (
     <div>
-      <Header/>
-      <main className="main">
-        <BrowserRouter>
+      <BrowserRouter>
+        <Header/>
+        <main className="main">
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/comics" component={Comics} />
           </Switch>
-        </BrowserRouter>
-      </main>
+        </main>
+      </BrowserRouter>
     </div>
   )
 }

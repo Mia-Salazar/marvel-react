@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import { Menu, Icon } from 'semantic-ui-react';
 
 import './Header.scss';
@@ -10,7 +11,9 @@ const items = [
 ];
 
 export const Header = () => {
+	console.log('header')
 	const handleClick = (event, c) => {
+		console.log(c)
 		updateLink(c.name)
 	};
 	const [linkActive, updateLink] = useState('home');
@@ -23,7 +26,7 @@ export const Header = () => {
 			</div>
 			{items.map((c) => (
 				<Menu.Item
-					href={c.key}
+					as={Link} to={c.key}
 					key={c.key}
 					name={c.key}
 					active={linkActive === c.key}

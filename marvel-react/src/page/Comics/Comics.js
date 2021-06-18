@@ -35,8 +35,8 @@ export const Comics = () => {
 			<Card.Group>
 				{isEmpty
 					? 'No hay comics nuevos de Marvel'
-					: comics.map((comic) => {
-						return <Comic></Comic>
+					: comics.map((comic, index) => {
+						return <Comic key={index}></Comic>
 					})
 				}
 			</Card.Group>
