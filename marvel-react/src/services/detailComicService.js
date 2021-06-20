@@ -11,10 +11,9 @@ export const getComicDetails = (id) => {
     });
 }
 
-export const getComicsDetailsAxios = () => {
-    return axios.get(`comics/v1/diamond_id/`, { method: 'get', mode: 'no-cors', })
+export const getComicsDetailsAxios = (id) => {
+    return axios.get(`comics/v1/diamond_id/${id}`, { method: 'get', mode: 'no-cors', })
     .then(response => {
-        console.log('ghgj')
         const { data } = response;
         return data;
     })
