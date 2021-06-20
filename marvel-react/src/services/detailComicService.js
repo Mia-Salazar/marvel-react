@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 
-export const getComics = () => {
-    return fetch("comics/v1/new")
+export const getComicDetails = (id) => {
+    return fetch(`comics/v1/diamond_id/${id}`)
     .then((response) => {
         return response.json();
     })
@@ -11,8 +11,8 @@ export const getComics = () => {
     });
 }
 
-export const getComicsAxios = () => {
-    return axios.get(`comics/v1/new`, { method: 'get', mode: 'no-cors', })
+export const getComicsDetailsAxios = (id) => {
+    return axios.get(`comics/v1/diamond_id/${id}`, { method: 'get', mode: 'no-cors', })
     .then(response => {
         const { data } = response;
         return data;
