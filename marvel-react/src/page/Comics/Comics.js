@@ -40,7 +40,7 @@ export const Comics = () => {
 			setIsEmpty(true);
 			updateNoLoadMore(true);
 	 });
-	}, [allComics]);
+	}, []);
 
 	return (
 		<Container className="comics section">
