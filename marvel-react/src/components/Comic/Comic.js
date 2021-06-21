@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Button, Card, Image } from 'semantic-ui-react';
 
 import marvel from '../../assets/img/marvel.png';
@@ -22,7 +23,7 @@ export const Comic = ({comic}) => {
       <Card.Content extra>
         <div className='ui two buttons'>
           <Button basic color='green'>
-            Ver más
+            <Link to={`/details/${comic.diamond_id}`}>Ver más</Link>
           </Button>
         </div>
       </Card.Content>
