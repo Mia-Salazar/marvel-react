@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Dimmer, Loader, Card, Input} from 'semantic-ui-react';
+import { Container, Dimmer, Loader, Card, Input, Checkbox } from 'semantic-ui-react';
 
 import { Comic } from '../../components/Comic/Comic';
 import { searchComic } from '../../services/searchService';
@@ -8,14 +8,21 @@ import './Searcher.scss';
 export const Searcher = () => {
 	const [loading, setLoading] = useState(false);
 	const [isEmpty, setIsEmpty] = useState(false);
+    const [isMarvel, setIsMarvel] = useState(true);
 	const [comics, updateComics] = useState([]);
     const [input, setInput] = useState('');
 
 	useEffect(() => {
         if (input !== '') {
+            let publisher;
+            if (!isMarvel) {
+                publisher = '';
+            } else {
+                publisher = 'marvel';
+            }
             const timeOutId = setTimeout(() => {
                 setLoading(true);
-                searchComic(input).then((json) => {
+                searchComic(input, publisher).then((json) => {
                     if (json.comics.length === 0) {
                         setIsEmpty(true);
                     } else {
@@ -30,10 +37,14 @@ export const Searcher = () => {
             }, 500);
             return () => clearTimeout(timeOutId);
         }
-	}, [input]);
+	}, [input, isMarvel]);
 
     const newSearch = (event) => {
         setInput(event.target.value);
+    }
+
+    const changePublisher = (event) => {
+        setIsMarvel(event.target.checked);
     }
 
 	return (
@@ -42,6 +53,7 @@ export const Searcher = () => {
             <div className="text-container">
                 <p className="text">Busca los comics de los que quieres recibir más información por títutlo</p>
                 <Input placeholder='Buscar cómics por título' icon='search' className="input" onChange={newSearch}/>
+                <Checkbox label='Comics solo de Marvel' className="checkbox" onChange={changePublisher} checked={isMarvel}/>
             </div>
 			{loading &&
 				<Dimmer active>
