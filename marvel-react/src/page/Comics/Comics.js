@@ -26,13 +26,16 @@ export const Comics = () => {
 		setLoading(true);
 		getComicsAxios().then((json) => {
 			const comicsMarvel = json.comics.filter(comics => comics.publisher === 'MARVEL COMICS');
-			if (comicsMarvel.length < 0) {
+			if (comicsMarvel.length === 0) {
+				console.log('yes')
 				setIsEmpty(true);
 				updateNoLoadMore(true);
 			} else {
+				setIsEmpty(false);
 				setAllComics(comicsMarvel);
 				let comicsFirstPage = allComics.splice(0,9);
 				updateComics(comicsFirstPage);
+				updateNoLoadMore(false);
 			}
 			setLoading(false);
 		}).catch(exception => {
@@ -40,7 +43,7 @@ export const Comics = () => {
 			setIsEmpty(true);
 			updateNoLoadMore(true);
 	 });
-	}, []);
+	}, [allComics]);
 
 	return (
 		<Container className="comics section">
