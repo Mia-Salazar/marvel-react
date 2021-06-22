@@ -5,6 +5,7 @@ import { Header } from '../src/components/Header/Header';
 import { Home } from '../src/page/Home/Home';
 import { Comics } from '../src/page/Comics/Comics';
 import { Details } from '../src/page/Details/Details';
+import { Searcher } from '../src/page/Searcher/Searcher';
 import './App.scss';
 
 
@@ -21,6 +22,7 @@ const App = () => {
             <Route exact path="/home" component={Home} />
             <Route exact path="/comics" component={Comics} />
             <Route exact path="/comics/:id" component={Details} />
+            <Route exact path="/search" component={Searcher} />
           </Switch>
         </main>
       </BrowserRouter>

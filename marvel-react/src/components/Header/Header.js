@@ -5,9 +5,9 @@ import { Menu, Icon } from 'semantic-ui-react';
 import './Header.scss';
 
 const items = [
-	{ key: 'home', active: true, name: 'Home' },
+	{ key: 'home', active: true, name: 'Inicio' },
 	{ key: 'comics', name: 'Comics' },
-	{ key: 'my-collection', name: 'My collection' },
+	{ key: 'search', name: 'Búsqueda' },
 ];
 
 export const Header = () => {
@@ -26,7 +26,7 @@ export const Header = () => {
 				<Menu.Item
 					as={Link} to={c.key}
 					key={c.key}
-					name={c.key}
+					name={c.name}
 					active={linkActive === c.key}
 					onClick={handleClick}
 				/>

@@ -15,7 +15,6 @@ export const Details = () => {
 	useEffect(() => {
 		setLoading(true);
 		getComicDetails(id).then((json) => {
-            console.log(json)
             updateComic(json.comics[0])
             setIsEmpty(false);
 			setLoading(false);
