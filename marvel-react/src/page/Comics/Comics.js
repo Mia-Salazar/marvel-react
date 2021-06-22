@@ -27,7 +27,6 @@ export const Comics = () => {
 		getComicsAxios().then((json) => {
 			const comicsMarvel = json.comics.filter(comics => comics.publisher === 'MARVEL COMICS');
 			if (comicsMarvel.length === 0) {
-				console.log('yes')
 				setIsEmpty(true);
 				updateNoLoadMore(true);
 			} else {
