@@ -1,0 +1,11 @@
+.ui.fluid.card.detail {
+    .extra.content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .date {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
