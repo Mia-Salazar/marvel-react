@@ -16,7 +16,6 @@ export const Searcher = () => {
             const timeOutId = setTimeout(() => {
                 setLoading(true);
                 searchComic(input).then((json) => {
-                    console.log('done')
                     if (json.comics.length === 0) {
                         setIsEmpty(true);
                     } else {
