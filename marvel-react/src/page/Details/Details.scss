@@ -1,0 +1,11 @@
+.ui.container.section.details {
+    @media (min-width: 768px) {
+        width: 600px;
+        margin: 32 auto;
+    }
+
+    .title {
+        margin-bottom: 48px;
+        text-align: center;
+    }
+}

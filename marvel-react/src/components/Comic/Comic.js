@@ -22,9 +22,11 @@ export const Comic = ({comic}) => {
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
-            <Link to={`/details/${comic.diamond_id}`}>Ver más</Link>
-          </Button>
+        <Link to={`/comics/${comic.diamond_id}`}>
+            <Button basic color='green'>
+              Ver más
+            </Button>
+          </Link>
         </div>
       </Card.Content>
     </Card>
